@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="LiquidTearApplication">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Tear Portal</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")                                                                                                                                                                  
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <h2 style="color:white">ᄂIQЦID ƬΣΛЯ PӨЯƬΛᄂ</h2>
+            </div>
+            <div ng-controller="TopMenuControl" ng-hide="ShowTopMenuFunc()" class="pull-right">
+                <url ng-repeat="Link in Links"><a href="{{Link.url}}" class="btn btn-{{Link.style}} btn-sm" >{{Link.text}}</a>&nbsp;</url>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

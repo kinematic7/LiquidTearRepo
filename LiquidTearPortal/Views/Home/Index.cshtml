@@ -1,0 +1,10 @@
+﻿<h2>Login</h2>
+<hr />
+<form class="form-group" ng-controller="LoginControl" name="frmLogin" >
+    <input ng-model="Data.LoginId" class="form-control" placeholder="Login Id" type="text" ng-minlength="5" required/>
+    <br />
+    <input ng-model="Data.Password" class="form-control" placeholder="Password" type="password" ng-minlength="8" required />
+    <br/>
+    <button ng-click="LoginFunc()" ng-disabled="frmLogin.$invalid" class="btn btn-primary">Login</button>
+    <button ng-click="NavigateToRegistrationFunc()" class="btn btn-warning">Register</button>
+</form>

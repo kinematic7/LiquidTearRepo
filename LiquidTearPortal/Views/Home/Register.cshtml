@@ -1,0 +1,21 @@
+﻿<h2>Register</h2>
+<hr />
+<form class="form-group" ng-controller="RegisterControl" name="frmRegister">
+    <input ng-model="data.LoginId" ng-minlength="5" required type="text" class="form-control" placeholder="Login Id" />
+    <span  class="alert-danger btn-sm" ng-show="!data.LoginId.length">Field must be at least 5 characters long.</span>
+    <br />
+    <input ng-model="data.Password" ng-minlength="8" required type="password" class="form-control" placeholder="Password" />
+    <span class="alert-danger btn-sm" ng-show="!data.Password.length">Field must be at least 8 characters long.</span>
+    <br />
+    <input ng-model="data.ConfirmPassword" compare-to="data.Password" type="password" class="form-control" placeholder="Confirm Password" />
+    <span class="alert-danger btn-sm" ng-show="errPassword_Mismatch_Msg">Your passwords did not match.</span>
+    <br />
+    <input ng-model="data.FirstName" ng-minlength="1" required type="text" class="form-control" placeholder="First Name" />
+    <span class="alert-danger btn-sm" ng-show="!data.FirstName.length">First Name cannot be empty.</span>
+    <br />
+    <input ng-model="data.LastName" ng-minlength="1" required type="text" class="form-control" placeholder="Last Name" />
+    <span class="alert-danger btn-sm" ng-show="!data.LastName.length">Last Name Cannot be empty</span>
+    <br />
+    <button ng-click="RegisterFunc()" ng-disabled="frmRegister.$invalid" class="btn btn-primary">Register</button>
+    <button ng-click="NavigateToLoginFunc()"class="btn btn-primary">Back to Login</button>
+</form>

@@ -1,0 +1,41 @@
+﻿<div class="form-group" ng-show="ShowAddItemForm">
+    <!-- You can always move this to another partial view with a conditional redirecting to it's page to customize it -->
+    <input ng-repeat="InputField in InputFields" placeholder="{{InputField.PlaceHolder}}" ng-model="InputField.Value" type="{{InputField.Type}}" class="form-control" />
+    <hr />
+    <div>
+        <button ng-show="false" remark="Fake Button to Prevent Keyboard Carriage Return"></button>
+        <button ng-click="DynamicTableService.AddItemFunc()" ng-show="ShowAddButton" class="btn btn-primary">Add</button>
+        <button ng-click="DynamicTableService.EditItemFunc(InputFields)" ng-show="ShowEditButton" class="btn btn-primary">Modify</button>
+        &nbsp;
+        <button ng-click="DynamicTableService.ClearInputFormControls()" class="btn btn-primary">Clear</button>
+        &nbsp;
+        <button ng-click="DynamicTableService.ShowAddItemFormFunc(false)" class="btn btn-primary">Close</button>
+    </div>
+</div>
+<div style="width:100%;">
+    <table style="width:100%; table-layout:fixed;" class="table-bordered">
+        <tr>
+            <th class="btn-success btn-sm" style="width:25%;">
+                &nbsp;Name
+            </th>
+            <th class="btn-success btn-sm" style="width:75%">
+                &nbsp;Description
+                <div class="pull-right">
+                    <button ng-click="DynamicTableService.ShowAddItemFormFunc(true)" class="btn btn-block btn-xs">&nbsp;<i class="glyphicon glyphicon-plus-sign"></i> ADD &nbsp;</button>
+                </div>
+            </th>
+        </tr>
+        <tr ng-repeat="TableItem in TableItems">
+            <td class="btn-sm" style="word-wrap:break-word; vertical-align:top;">
+                &nbsp;{{TableItem.Name}}
+            </td>
+            <td class="btn-sm" style="word-wrap:break-word; vertical-align:top;">
+                &nbsp;{{TableItem.Description}}
+            </td>
+            <td style="vertical-align:top;">
+                <button class="btn btn-primary btn-xs" id="{{TableItem.Id}}" ng-click="$parent.DynamicTableService.ShowEditItemFunc(TableItem)"><i class="glyphicon glyphicon-pencil"></i></button>
+                <button class="btn btn-danger btn-xs" id="{{TableItem.Id}}" ng-click="$parent.DynamicTableService.RemoveItemFunc(TableItem, TableItems)"><i class="glyphicon glyphicon-trash"></i></button>
+            </td>
+        </tr>
+    </table>
+</div>
