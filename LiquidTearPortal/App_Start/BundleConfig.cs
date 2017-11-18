@@ -16,7 +16,7 @@ namespace LiquidTearPortal
                         "~/Scripts/Application/Layout.js",
                         "~/Scripts/Application/Home/Index.js",
                         "~/Scripts/Application/Home/Register.js",
-                        "~/Scripts/Application/Home/DynamicTableSample.js"
+                        "~/Scripts/Application/GuiSamples/DynamicTableSample.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

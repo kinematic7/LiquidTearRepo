@@ -6,18 +6,9 @@ using System.Web.Mvc;
 
 namespace LiquidTearPortal.Controllers
 {
-    public class HomeController : Controller
+    public class GuiSamplesController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Register()
-        {
-            return View();
-        }
-
+        // GET: GuiSamples
         public ActionResult DynamicTableSample()
         {
             return View();

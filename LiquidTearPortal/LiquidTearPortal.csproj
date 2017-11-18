@@ -142,6 +142,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GuiControlsController.cs" />
+    <Compile Include="Controllers\GuiSamplesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -192,7 +194,7 @@
     <Content Include="Scripts\Application\Home\Index.js" />
     <Content Include="Scripts\Application\Initialize.js" />
     <Content Include="Scripts\Application\Layout.js" />
-    <Content Include="Scripts\Application\Home\DynamicTableSample.js" />
+    <Content Include="Scripts\Application\GuiSamples\DynamicTableSample.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
@@ -987,8 +989,8 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Home\DynamicTable.cshtml" />
-    <Content Include="Views\Home\DynamicTableSample.cshtml" />
+    <Content Include="Views\GuiControls\DynamicTable.cshtml" />
+    <Content Include="Views\GuiSamples\DynamicTableSample.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
