@@ -12,6 +12,7 @@ namespace LiquidTearPortal
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/angular.min.js",
                         "~/Scripts/Application/Initialize.js",
+                        "~/Scripts/Application/GuiControls/DynamicTableService.js",
                         "~/Scripts/Application/Layout.js",
                         "~/Scripts/Application/Home/Index.js",
                         "~/Scripts/Application/Home/Register.js",
