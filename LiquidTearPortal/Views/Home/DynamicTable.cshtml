@@ -4,12 +4,12 @@
     <hr />
     <div>
         <button ng-show="false" remark="Fake Button to Prevent Keyboard Carriage Return"></button>
-        <button ng-click="DynamicTableService.AddItemFunc()" ng-show="ShowAddButton" class="btn btn-primary">Add</button>
-        <button ng-click="DynamicTableService.EditItemFunc(InputFields)" ng-show="ShowEditButton" class="btn btn-primary">Modify</button>
+        <button ng-click="DynamicTableService.AddItemFunc(InputFields, TableItems); ShowAddItemForm = false;" ng-show="ShowAddButton" class="btn btn-primary">Add</button>
+        <button ng-click="DynamicTableService.EditItemFunc(InputFields); ShowAddItemForm = false;" ng-show="ShowEditButton" class="btn btn-primary">Modify</button>
         &nbsp;
-        <button ng-click="DynamicTableService.ClearInputFormControls()" class="btn btn-primary">Clear</button>
+        <button ng-click="DynamicTableService.ClearInputFormControls(InputFields)" class="btn btn-primary">Clear</button>
         &nbsp;
-        <button ng-click="DynamicTableService.ShowAddItemFormFunc(false)" class="btn btn-primary">Close</button>
+        <button ng-click="DynamicTableService.ClearInputFormControls(InputFields); ShowAddItemForm = false;" class="btn btn-primary">Close</button>
     </div>
 </div>
 <div style="width:100%;">
@@ -21,7 +21,7 @@
             <th class="btn-success btn-sm" style="width:75%">
                 &nbsp;Description
                 <div class="pull-right">
-                    <button ng-click="DynamicTableService.ShowAddItemFormFunc(true)" class="btn btn-block btn-xs">&nbsp;<i class="glyphicon glyphicon-plus-sign"></i> ADD &nbsp;</button>
+                    <button ng-click="ShowAddItemForm = true; ShowAddButton = true; ShowEditButton = false;" class="btn btn-block btn-xs">&nbsp;<i class="glyphicon glyphicon-plus-sign"></i> ADD &nbsp;</button>
                 </div>
             </th>
         </tr>
@@ -33,7 +33,7 @@
                 &nbsp;{{TableItem.Description}}
             </td>
             <td style="vertical-align:top;">
-                <button class="btn btn-primary btn-xs" id="{{TableItem.Id}}" ng-click="$parent.DynamicTableService.ShowEditItemFunc(TableItem)"><i class="glyphicon glyphicon-pencil"></i></button>
+                <button class="btn btn-primary btn-xs" id="{{TableItem.Id}}" ng-click="$parent.ShowAddItemForm = true; $parent.DynamicTableService.ShowEditItemFunc(TableItem, InputFields, ShowAddItemForm); $parent.ShowAddButton = false; $parent.ShowEditButton = true;"><i class="glyphicon glyphicon-pencil"></i></button>
                 <button class="btn btn-danger btn-xs" id="{{TableItem.Id}}" ng-click="$parent.DynamicTableService.RemoveItemFunc(TableItem, TableItems)"><i class="glyphicon glyphicon-trash"></i></button>
             </td>
         </tr>

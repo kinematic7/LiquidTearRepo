@@ -1,4 +1,4 @@
-﻿LiquidTearApplication.controller('TaskControl',
+﻿LiquidTearApplication.controller('DynamicTableSampleControl',
     function ($scope, DynamicTableService) {
 
         var CurrentTableItem = null;
@@ -27,9 +27,6 @@
 
             $scope.DynamicTableService = DynamicTableService;
 
-            // Pass $scope for static contents only to DynamicService
-
-            DynamicTableService.Initalize($scope);
         }
 
         // Call Initialize after function creation

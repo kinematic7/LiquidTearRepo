@@ -22,5 +22,10 @@ namespace LiquidTearPortal.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult DynamicTableSample()
+        {
+            return View();
+        }
     }
 }

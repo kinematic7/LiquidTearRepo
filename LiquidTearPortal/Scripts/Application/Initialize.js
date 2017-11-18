@@ -3,62 +3,44 @@
 LiquidTearApplication.service("DynamicTableService", function () {
 
     var CurrentTableItem = null;
-    var scope = null;
-
-    // ## Set Scope for the Static Content of the Form ## //
-
-    this.Initalize = function (localScope) {
-        scope = localScope;
-    }
-
-    //// ## Show Add Button or Modify Button ## //
-
-    this.ShowAddButtonFunc = function (IsShowAddButton) {
-        scope.ShowAddButton = IsShowAddButton;
-        scope.ShowEditButton = !IsShowAddButton;
-    }
-
+   
     // ## Show or Hide Add Item Form ## //
 
-    this.ShowAddItemFormFunc = function (isShow) {
-        scope.ShowAddItemForm = isShow;
-        this.ShowAddButtonFunc(true);
-        this.ClearInputFormControls();
+    this.ShowAddItemFormFunc = function (isShow, InputFields, ShowAddItemForm) {
+        ShowAddItemForm = isShow;
+        //this.ShowAddButtonFunc(true);
+        this.ClearInputFormControls(InputFields);
     }
 
     // ## Add an item ## //
 
-    this.AddItemFunc = function () {
+    this.AddItemFunc = function (InputFields, TableItems) {
         var jsonStr = "{ \"Id:\":\"-1\", ";
-        angular.forEach(scope.InputFields, function (InputField) {
+        angular.forEach(InputFields, function (InputField) {
             jsonStr = jsonStr + "\"" + InputField.Name + "\":\"" + InputField.Value + "\", ";
         });
         jsonStr = jsonStr + "}";
         jsonStr = jsonStr.replace(", }", "}");
-        scope.TableItems.splice(0, 0, JSON.parse(jsonStr));
-        scope.ShowAddItemForm = false;
-        this.ClearInputFormControls();
+        TableItems.splice(0, 0, JSON.parse(jsonStr));
+        this.ClearInputFormControls(InputFields);
     }
 
     // ## Clear Input Controls ## //
 
-    this.ClearInputFormControls = function () {
-        angular.forEach(scope.InputFields, function (InputField) {
+    this.ClearInputFormControls = function (InputFields) {
+        angular.forEach(InputFields, function (InputField) {
             InputField.Value = "";
         });
     }
 
     // ## Show or Hide Edit Item Form and Populate relevant Input Fields from the Table Data ## //
 
-    this.ShowEditItemFunc = function (TableItem) {
+    this.ShowEditItemFunc = function (TableItem, InputFields) {
 
         CurrentTableItem = TableItem;
-
-        scope.ShowAddItemForm = true;
-        this.ShowAddButtonFunc(false);
-
+    
         for (var key in CurrentTableItem) {
-            angular.forEach(scope.InputFields, function (InputField) {
+            angular.forEach(InputFields, function (InputField) {
                 if (InputField.Name == key) {
                     InputField.Value = CurrentTableItem[key];
                 }
@@ -76,7 +58,6 @@ LiquidTearApplication.service("DynamicTableService", function () {
                 }
             });
         }
-        scope.ShowAddItemForm = false;
         this.ClearInputFormControls(InputFields);
     }
 

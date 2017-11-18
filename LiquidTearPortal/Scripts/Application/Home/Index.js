@@ -11,7 +11,7 @@
 
         $scope.LoginFunc = function () {
             console.log($scope.Data);
-            window.location = "../Tasks/Index";
+            window.location = "../Home/DynamicTableSample";
         }
 
         // ## Navigate to Registration Page ## //

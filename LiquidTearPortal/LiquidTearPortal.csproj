@@ -143,11 +143,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ContactsController.cs" />
-    <Compile Include="Controllers\BillsController.cs" />
-    <Compile Include="Controllers\LocationsController.cs" />
-    <Compile Include="Controllers\NotesController.cs" />
-    <Compile Include="Controllers\TasksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,7 +191,7 @@
     <Content Include="Scripts\Application\Home\Index.js" />
     <Content Include="Scripts\Application\Initialize.js" />
     <Content Include="Scripts\Application\Layout.js" />
-    <Content Include="Scripts\Application\Tasks\Index.js" />
+    <Content Include="Scripts\Application\Home\DynamicTableSample.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
@@ -990,13 +985,9 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Views\Tasks\Index.cshtml" />
-    <Content Include="Views\Notes\Index.cshtml" />
-    <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Contacts\Index.cshtml" />
-    <Content Include="Views\Bills\Index.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\DynamicTable.cshtml" />
+    <Content Include="Views\Home\DynamicTableSample.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

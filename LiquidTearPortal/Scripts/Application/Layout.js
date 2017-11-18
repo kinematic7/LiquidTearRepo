@@ -6,11 +6,7 @@
 
         $scope.Initialize = function () {
             $scope.Links = [
-                { url: "../Tasks/Index", text: "Tasks", style: "success" },
-                { url: "../Contacts/Index", text: "Contacts", style: "success" },
-                { url: "../Bills/Index", text: "Bills", style: "success" },
-                { url: "../Locations/Index", text: "Locations", style: "success" },
-                { url: "../Notes/Index", text: "Notes", style: "success" },
+                { url: "../Home/DynamicTableSample", text: "Dynamic Table", style: "success" },
                 { url: "../Home/Index", text: "Logout", style: "danger" }
             ];
         }
