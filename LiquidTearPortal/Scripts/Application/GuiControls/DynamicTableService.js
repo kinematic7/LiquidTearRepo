@@ -6,7 +6,6 @@
 
     this.ShowAddItemFormFunc = function (isShow, InputFields, ShowAddItemForm) {
         ShowAddItemForm = isShow;
-        //this.ShowAddButtonFunc(true);
         this.ClearInputFormControls(InputFields);
     }
 
