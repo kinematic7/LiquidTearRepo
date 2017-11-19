@@ -12,8 +12,8 @@
             // Define Input Fields
 
             $scope.InputFields = [
-                { Name: "Name", Value: "", Type: "text", PlaceHolder: "Task Name" },
-                { Name: "Description", Value: "", Type: "Text", PlaceHolder: "Description" }
+                { Name: "Name", Value: "", Type: "text", PlaceHolder: "Task Name", ColumnWidth: "25%" },
+                { Name: "Description", Value: "", Type: "Text", PlaceHolder: "Description", ColumnWidth: "75%" }
             ];
 
             // Load previous saved items
