@@ -18,14 +18,11 @@
     <table style="table-layout:fixed; max-width:100%;" class="table-bordered">
         <tr>
             <th ng-repeat="InputField in InputFields" style="width:{{InputField.ColumnWidth}}" class="btn-primary" >&nbsp;{{InputField.PlaceHolder}}</th>
-            <th style="max-width:15px;"><button class="btn btn-primary btn-xs" ng-click="ShowAddItemForm = true; ShowAddButton = true; ShowEditButton = false;" class="btn btn-block btn-xs"><i class="glyphicon glyphicon-plus-sign"></i></button></th>
+            <th style="max-width:15px;"><button class="btn btn-primary btn-xs" ng-click="ShowAddItemForm = true; ShowAddButton = true; ShowEditButton = false;"><i class="glyphicon glyphicon-plus-sign"></i></button></th>
         </tr>
         <tr ng-repeat="TableItem in TableItems">
-            <td class="btn-sm" style="word-wrap:break-word; vertical-align:top;">
-                &nbsp;&nbsp;{{TableItem.Name}}
-            </td>
-            <td class="btn-sm" style="word-wrap:break-word; vertical-align:top;">
-                &nbsp;&nbsp;{{TableItem.Description}}
+            <td ng-repeat="(key,value) in TableItem" ng-if="key != 'Id'" class="btn-sm" style="word-wrap:break-word; vertical-align:top;">
+                &nbsp;&nbsp;{{value}}
             </td>
             <td style="vertical-align:top;">
                 <button class="btn btn-primary btn-xs" id="{{TableItem.Id}}" ng-click="$parent.ShowAddItemForm = true; $parent.DynamicTableService.ShowEditItemFunc(TableItem, InputFields, ShowAddItemForm); $parent.ShowAddButton = false; $parent.ShowEditButton = true;"><i class="glyphicon glyphicon-pencil"></i></button>

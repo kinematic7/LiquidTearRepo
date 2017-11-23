@@ -12,7 +12,7 @@
     // ## Add an item ## //
 
     this.AddItemFunc = function (InputFields, TableItems) {
-        var jsonStr = "{ \"Id:\":\"-1\", ";
+        var jsonStr = "{ ";
         angular.forEach(InputFields, function (InputField) {
             jsonStr = jsonStr + "\"" + InputField.Name + "\":\"" + InputField.Value + "\", ";
         });
