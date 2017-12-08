@@ -1,5 +1,5 @@
 ﻿LiquidTearApplication.controller('BillManagementControl',
-    function ($scope, DynamicTableService) {
+    function ($scope, $http, DynamicTableService) {
 
         var CurrentTableItem = null;
         
@@ -20,15 +20,21 @@
            
             // Load previous saved items
 
-            $scope.TableItems = [
-                { Id: "1", Name: "Sample1", Description: "Description1", LoginId: "XX", Password: "YY" },
-                { Id: "2", Name: "Sample2", Description: "Description2", LoginId: "XX", Password: "YY" }
-            ];     
-           
+            $scope.TableItems = [];
+
+            $http.post("GetBillingData", null,
+                {
+
+                }).then(function (response) {
+                    $scope.TableItems = response.data;
+                })
+                .catch(function (response) {
+                    alert('error'); 
+                });
+
             // Used to call DynamicTableService from DynamicTable in html
 
-            $scope.DynamicTableService = DynamicTableService;
-
+            $scope.DynamicTableService = DynamicTableService;            
         }
 
         // Call Initialize after function creation
